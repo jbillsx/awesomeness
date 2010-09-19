@@ -1,0 +1,42 @@
+<!doctype html>
+<html>
+<head>
+<title>Awesomeness Client</title>
+<link rel="stylesheet" href="ui.css">
+<link rel="stylesheet" href="main.css">
+<link rel="stylesheet" href="reply_edit_del.css">
+<link rel="stylesheet" href="search_box.css">
+</head>
+<body>
+
+<script src="/Socket.IO/socket.io.js"></script>
+<script src="https://wave.google.com/gadgets/js/core:rpc?debug=1&c=1"></script>
+
+<script src="delta.js"></script>
+<script src="messages.js"></script>
+<script src="gadgets.js"></script>
+<div class="wave-titlebar">please fork me on <a href='http://github.com/antimatter15/awesomeness' style='color:white'>github.</a></div>
+<div class="wave-section-blue">
+  <div style="float:right" class="toolbar">
+	  <button onclick="inlineReply()">Inline Reply
+	  </button><button onclick="addGadget()">Gadget
+	  </button><button onclick="insertOL()">1.</button><button onclick="insertUL()">&bull; a
+	  </button><button onclick="document.execCommand('bold',false)"><b>b</b>
+	  </button><button onclick="document.execCommand('italic',false)"><i>i</i>
+	  </button><button onclick="document.execCommand('underline',false)"><u>u</u>
+	  </button><button onclick="document.execCommand('strikeThrough',false)"><s>s</s>
+	  </button><button onclick="document.execCommand('subscript',false)">sub
+	  </button><button onclick="document.execCommand('superscript',false)">super</button>
+  </div>
+<form onsubmit="var v=this.root.value;setTimeout(function(){render(v)},0);return false" style="margin:0;padding:0">
+  <input type='text' class="wave-searchbox" name='root' value='http://localhost:8124/supertestparent' style="width:300px" autofocus>
+  <button type='submit'>Go</button>
+
+</form>
+</div>
+
+
+<div id="main" class="wave-section">
+</div>
+</body>
+</html>
